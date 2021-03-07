@@ -1,0 +1,45 @@
+<div class="box">
+  <div class="box-inner">
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= devise_error_messages! %>
+      <h1>ユーザー新規登録</h1>
+      <div class="box-nickname">
+        <%= f.label :nickname, "ニックネーム ( 6字以内 )" %><br />
+        <%= f.text_field :nickname, autofocus: true, maxlengh: "6" %>
+      </div>
+      <div class="box-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <%= f.label :password, "パスワード" %>
+            <% if @minimum_password_length %>
+            <b>( <%= @minimum_password_length %>字以上 )</b>
+            <% end %><br />
+          </div>
+        </div>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <%= f.label :password_confilmation, "パスワード(確認)" %>
+          </div>
+        </div>
+        <%= f.password_field :password_confilmation, autocomplete: "off" %>
+      </div>
+
+      <div class="box-login">
+        <%= f.submit "登録する" %>
+      </div>
+    <% end %>
+
+    <div class="box-newusr">
+      <p></span> アカウントをお持ちですか？</p>
+      <%= link_to "ログイン画面", new_user_session_path %>
+    </div>
+  </div>
+</div>
