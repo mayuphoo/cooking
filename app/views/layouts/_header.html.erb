@@ -7,16 +7,30 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Cooking Blog</a>
+          <div class="navbar-logo">
+            <a class="navbar-brand" href="/">Cooking Blog</a>
+          </div>
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+          <div class="search-icon">
+            <%= form_tag(articles_path, :method => "get") do %>
+            <%= text_field_tag :search, '',placeholder: 'キーワードで探す' %> 
+            <%= submit_tag "Search" ,:title => nil ,class: "button is-info"%> 
+            <% end %> 
+          </div>
+
+          <div class="category-icon">
+            <div class="category" id="lists">カテゴリで探す</div>
+          </div>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <p class="navbar-text navbar-right">
-          <% if user_signed_in? && current_user.id == 1 %>
+          <%# <% if user_signed_in? && current_user.id == 1 %> 
             <%= link_to '新規作成', new_article_path %>
-          <% end %>
+          <%# <% end %> 
           <% if user_signed_in? %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= current_user.nickname %>
+            <%= link_to current_user.nickname, mypage_path(current_user.id) %>
           <% else %>
             <%= link_to "ログイン", new_user_session_path %>
             &nbsp;
@@ -24,5 +38,20 @@
           <% end %>
         </p>        
       </div>
+
+      <ul class="show-lists hid" id="pull-down">
+        <li class="pull-down-list" id="pull-lists"><%= link_to 'お肉のおかず', 'articles/genre/2' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to '魚介のおかず', 'articles/genre/3' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to '野菜のおかず', 'articles/genre/4' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to 'ご飯もの', 'articles/genre/5' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to '卵料理', 'articles/genre/6' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to 'パスタ・グラタン', 'articles/genre/7' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to '麺類', 'articles/genre/8' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to '副菜・サラダ', 'articles/genre/9' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to 'スープ・汁物・シチュー', 'articles/genre/10' %></li>
+        <li class="pull-down-list" id="pull-lists"><%= link_to 'お菓子・スイーツ', 'articles/genre/11' %></li>
+      </ul>
+
     </div>
   </nav>
+

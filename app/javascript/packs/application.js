@@ -7,7 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require("./preview")
+require("./category")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -21,4 +22,6 @@ require("channels")
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require popper
+
 //= require_tree .

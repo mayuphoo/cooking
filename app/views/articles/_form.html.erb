@@ -1,8 +1,26 @@
 <%= form_with model:article do |f| %>
-  <div class="form-group padding-top-15">
-    <%= f.label :title, 'タイトル' %>
-    <%= f.text_field :title, class: 'form-control' %>
+
+  <div class="form-group"> 
+    <%= f.label :images, '画像' %>
+    <%= f.file_field :images, name: 'article[images][]', id: "article-image" %>
+
   </div>
+  
+    <div id="image-list",class="image-list"></div>
+
+  <div class="form-group padding-top-15">  
+    <div class="form-group"> 
+      <%= f.label :genre_id, 'カテゴリー' %>
+      <div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+      </div>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+  </div>
+  
   <div class="form-group"> 
     <%= f.label :body, 'コンテンツ' %>
     <%= f.text_area :body, rows: 10, class: 'form-control' %>
