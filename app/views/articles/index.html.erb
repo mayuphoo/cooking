@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article| %>
+      <%= link_to article do %>
+        <div class="col-md-3 margin-top-5per article-block">
+          <%= image_tag 'mafin.jpeg', class: 'img-responsive padding-top-15'%>
+          <div class="padding-bottom-15">
+            <p class="title"><%= article.title %></p>
+            <span>
+              <%= article.created_at.strftime('%Y/%m/%d') %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= link_to '新規作成', new_article_path, class:'margin-top-5per btn btn-primary',style: 'margin-bottom: 30px' %>
+  </div>
+</div>
