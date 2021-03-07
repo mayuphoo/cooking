@@ -1,0 +1,143 @@
+Started GET "/" for ::1 at 2021-03-07 22:42:33 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` ORDER BY `articles`.`created_at` DESC[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 3903.1ms | Allocations: 3610684)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mayu/projects/cooking/public/packs
+[Webpacker] Hash: e8a198dc23d4de899e6f
+Version: webpack 4.46.0
+Time: 1434ms
+Built at: 2021/03/07 22:42:40
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e76fa6a6a8d3a0bbea40.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e76fa6a6a8d3a0bbea40.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e76fa6a6a8d3a0bbea40.js js/application-e76fa6a6a8d3a0bbea40.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 865 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 445)
+Completed 200 OK in 6954ms (Views: 6925.2ms | ActiveRecord: 9.0ms | Allocations: 3634763)
+
+
+Started GET "/articles/5" for ::1 at 2021-03-07 22:43:06 +0900
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/articles_controller.rb:45:in `find_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 167)
+Completed 200 OK in 69ms (Views: 43.3ms | ActiveRecord: 0.7ms | Allocations: 17179)
+
+
+Started GET "/" for ::1 at 2021-03-07 22:43:09 +0900
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` ORDER BY `articles`.`created_at` DESC[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2413)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 164)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.7ms | Allocations: 15083)
+
+
+Started GET "/articles/5" for ::1 at 2021-03-07 22:43:12 +0900
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/articles_controller.rb:45:in `find_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 876)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 164)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.5ms | Allocations: 14115)
+
+
+Started GET "/" for ::1 at 2021-03-07 22:43:16 +0900
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` ORDER BY `articles`.`created_at` DESC[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 164)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.8ms | Allocations: 15078)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-03-07 22:43:23 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 2334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 141)
+Completed 200 OK in 74ms (Views: 41.5ms | ActiveRecord: 5.7ms | Allocations: 23055)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-07 22:43:24 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__138905672629735434_70157959247380 at /Users/mayu/projects/cooking/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 141)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 14821)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-03-07 22:43:26 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 141)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 13465)
+
+
+Started GET "/" for ::1 at 2021-03-07 22:43:27 +0900
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT `articles`.* FROM `articles` ORDER BY `articles`.`created_at` DESC[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2407)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 167)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 15067)
+
+
+Started GET "/" for ::1 at 2021-03-07 22:45:45 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4989)
+
+
+  
+NameError (uninitialized constant #<Class:0x00007f9dd8606238>::ActiveHash
+Did you mean?  ActiveStorage):
+  
+app/models/article.rb:3:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
